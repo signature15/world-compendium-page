@@ -1,3 +1,4 @@
+import { join } from 'node:path';
 /**
  * entry.png — a one-page world news broadsheet for Wednesday
  * 18 November 2026, committed at the repository root and delivered to
@@ -29,8 +30,6 @@
  *   MAKEFUN_OUTPUT_DIR=./out node main.ts   # writes ./out/entry.png
  */
 import { copyFileSync } from 'node:fs';
-import { join } from 'node:path';
-
 const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
 copyFileSync(new URL('./entry.png', import.meta.url), join(outputDir, 'entry.png'));
